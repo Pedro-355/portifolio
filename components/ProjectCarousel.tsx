@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "@/data/projects";
+import { projects } from "../data/projects";
 
 export default function ProjectCarousel() {
   const [current, setCurrent] = useState(0);
@@ -23,7 +23,7 @@ export default function ProjectCarousel() {
   return (
     <div className="relative">
 
-      {/* CARD */}
+      {/* PROJECT CARD */}
 
       <article className="card mx-auto max-w-3xl rounded-2xl p-8 md:p-10">
 
@@ -63,7 +63,7 @@ export default function ProjectCarousel() {
 
         </div>
 
-        {/* GITHUB */}
+        {/* REPOSITORY */}
 
         <div className="mt-8">
 

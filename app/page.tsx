@@ -1,4 +1,5 @@
-import ProjectCarousel from "@/components/ProjectCarousel";
+import ProjectCarousel from "../components/ProjectCarousel";
+import CertificationCarousel from "../components/CertificationCarousel";
 
 const stack = {
   Cloud: ["AWS", "GCP", "Azure"],
@@ -363,12 +364,12 @@ export default function Home() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-xl leading-7 text-gray-400">
-            Find me on GitHub or LinkedIn and let's talk
-            about cloud, automation, infrastructure and
+            Find me on GitHub, GitLab or LinkedIn and let's
+            talk about cloud, automation, infrastructure and
             technology.
           </p>
 
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
 
             <a
               href="https://www.linkedin.com/in/pedro-vieira-2b1726303"
@@ -383,9 +384,18 @@ export default function Home() {
               href="https://github.com/Pedro-355"
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-[#303944] px-5 py-3 font-semibold hover:border-white"
+              className="rounded-lg border border-[#303944] px-5 py-3 font-semibold text-white hover:border-white"
             >
               GitHub ↗
+            </a>
+
+            <a
+              href="https://gitlab.com/SEU_USUARIO"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-lg border border-[#303944] px-5 py-3 font-semibold text-white hover:border-orange-400 hover:text-orange-400"
+            >
+              GitLab ↗
             </a>
 
           </div>
@@ -396,17 +406,106 @@ export default function Home() {
 
       {/* FOOTER */}
 
-      <footer className="border-t border-[#202833] px-6 py-8">
+      <footer className="border-t border-[#202833] bg-[#07090d] px-6 py-16">
 
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-3 font-mono text-xs text-gray-500 sm:flex-row">
+        <div className="mx-auto max-w-6xl">
 
-          <span>
-            © {new Date().getFullYear()} Pedro Vieira
-          </span>
+          {/* FOOTER HEADER */}
 
-          <span>
-            Automate. Build. Improve. 🚀
-          </span>
+          <div className="grid gap-10 md:grid-cols-[1fr_auto]">
+
+            <div>
+
+              <p className="font-mono text-sm text-green-400">
+                contact
+              </p>
+
+              <h2 className="mt-2 text-2xl font-bold text-white">
+                Pedro Vieira
+              </h2>
+
+              <p className="mt-3 max-w-xl text-gray-400">
+                DevOps Engineer focused on cloud infrastructure,
+                automation, CI/CD and observability.
+              </p>
+
+              <a
+                href="mailto:seu-email@email.com"
+                className="mt-5 inline-block font-mono text-sm text-blue-400 hover:text-blue-300"
+              >
+                seu-email@email.com
+              </a>
+
+            </div>
+
+            {/* SOCIAL LINKS */}
+
+            <div className="flex flex-wrap content-start gap-3">
+
+              <a
+                href="https://github.com/Pedro-355"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-[#303944] px-4 py-2 text-sm text-gray-300 hover:border-white hover:text-white"
+              >
+                GitHub ↗
+              </a>
+
+              <a
+                href="https://gitlab.com/SEU_USUARIO"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-[#303944] px-4 py-2 text-sm text-gray-300 hover:border-orange-400 hover:text-orange-400"
+              >
+                GitLab ↗
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/pedro-vieira-2b1726303"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-[#303944] px-4 py-2 text-sm text-gray-300 hover:border-blue-400 hover:text-blue-400"
+              >
+                LinkedIn ↗
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* CERTIFICATIONS */}
+
+          <div className="mt-14">
+
+            <div className="mb-6">
+
+              <p className="font-mono text-sm text-green-400">
+                certifications
+              </p>
+
+              <h3 className="mt-2 text-2xl font-bold text-white">
+                Certifications & Credentials
+              </h3>
+
+            </div>
+
+            <CertificationCarousel />
+
+          </div>
+
+          {/* FOOTER BOTTOM */}
+
+          <div className="mt-14 flex flex-col justify-between gap-3 border-t border-[#202833] pt-8 font-mono text-xs text-gray-500 sm:flex-row">
+
+            <span>
+              © {new Date().getFullYear()} Pedro Vieira
+            </span>
+
+            <span>
+              Automate. Build. Improve. 🚀
+            </span>
+
+          </div>
 
         </div>
 

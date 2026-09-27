@@ -83,3 +83,21 @@ a {
     border-color 150ms ease,
     background 150ms ease;
 }
+
+.certification-carousel {
+  animation: certification-scroll 30s linear infinite;
+}
+
+.certification-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes certification-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
