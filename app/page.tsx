@@ -1,3 +1,5 @@
+import ProjectCarousel from "@/components/ProjectCarousel";
+
 const stack = {
   Cloud: ["AWS", "GCP", "Azure"],
 
@@ -31,47 +33,6 @@ const stack = {
     "Python",
   ],
 };
-
-const projects = [
-  {
-    title: "Infrastructure Automation",
-
-    description:
-      "Cloud infrastructure designed around repeatability, automation and infrastructure as code.",
-
-    tags: [
-      "Terraform",
-      "Cloud",
-      "Automation",
-    ],
-  },
-
-  {
-    title: "CI/CD Pipelines",
-
-    description:
-      "Automated delivery workflows focused on reliable builds, deployments and operational feedback.",
-
-    tags: [
-      "GitLab CI",
-      "GitHub Actions",
-      "DevOps",
-    ],
-  },
-
-  {
-    title: "Observability Stack",
-
-    description:
-      "Metrics, logs and dashboards to make distributed systems easier to operate and troubleshoot.",
-
-    tags: [
-      "Grafana",
-      "Prometheus",
-      "Loki",
-    ],
-  },
-];
 
 function SectionTitle({
   eyebrow,
@@ -113,19 +74,31 @@ export default function Home() {
 
           <div className="hidden gap-6 text-sm text-gray-400 sm:flex">
 
-            <a href="#about" className="hover:text-white">
+            <a
+              href="#about"
+              className="hover:text-white"
+            >
               About
             </a>
 
-            <a href="#stack" className="hover:text-white">
+            <a
+              href="#stack"
+              className="hover:text-white"
+            >
               Stack
             </a>
 
-            <a href="#projects" className="hover:text-white">
+            <a
+              href="#projects"
+              className="hover:text-white"
+            >
               Projects
             </a>
 
-            <a href="#contact" className="hover:text-white">
+            <a
+              href="#contact"
+              className="hover:text-white"
+            >
               Contact
             </a>
 
@@ -368,47 +341,7 @@ export default function Home() {
           title="Things I've built."
         />
 
-        <div className="grid gap-6 md:grid-cols-3">
-
-          {projects.map((project, index) => (
-
-            <article
-              key={project.title}
-              className="card rounded-2xl p-7"
-            >
-
-              <div className="mb-6 font-mono text-sm text-blue-400">
-                0{index + 1}
-              </div>
-
-              <h3 className="mb-3 text-xl font-bold">
-                {project.title}
-              </h3>
-
-              <p className="mb-6 min-h-24 leading-7 text-gray-400">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-
-                {project.tags.map((tag) => (
-
-                  <span
-                    key={tag}
-                    className="text-xs text-green-400"
-                  >
-                    #{tag.replaceAll(" ", "-")}
-                  </span>
-
-                ))}
-
-              </div>
-
-            </article>
-
-          ))}
-
-        </div>
+        <ProjectCarousel />
 
       </section>
 
