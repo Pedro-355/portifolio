@@ -111,11 +111,8 @@ export default function Home() {
       {/* HERO */}
 
       <section className="grid-bg flex min-h-screen items-center px-6 pt-20">
-
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-14 py-20 lg:grid-cols-[1.25fr_.75fr]">
-
-          <div>
-
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 py-20 lg:grid-cols-[1.1fr_1.2fr]">
+          <div className="max-w-xl">
             <p className="terminal-line mb-6 font-mono text-sm text-gray-400">
               whoami
             </p>
@@ -124,97 +121,91 @@ export default function Home() {
               DevOps Engineer
             </p>
 
-            <h1 className="max-w-4xl text-5xl font-black tracking-tight text-white md:text-7xl">
+            <h1 className="text-5xl font-black tracking-tight text-white md:text-7xl">
               Pedro Vieira
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400 md:text-xl">
+            <p className="mt-6 text-lg leading-8 text-gray-400 md:text-xl">
               I build and automate cloud infrastructure,
               CI/CD pipelines and containerized environments
               with a focus on reliability, scalability and
               observability.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-2 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-300">
+              {['AWS', 'GCP', 'Terraform', 'Kubernetes', 'GitHub Actions'].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-slate-700 bg-slate-900/60 px-2.5 py-1.5"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
 
+            <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#projects"
                 className="rounded-lg bg-white px-5 py-3 font-semibold text-black hover:bg-gray-200"
               >
                 View projects
               </a>
-
-              <a
-                href="https://github.com/Pedro-355"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg border border-[#303944] px-5 py-3 font-semibold text-white hover:border-blue-400 hover:text-blue-400"
-              >
-                GitHub ↗
-              </a>
-
             </div>
-
           </div>
 
-          {/* TERMINAL */}
+          <div className="flex justify-center">
+            <div className="glow card flex h-[420px] w-full max-w-[360px] flex-col rounded-2xl p-5 font-mono text-sm">
+              <div className="mb-5 flex gap-2 border-b border-[#202833] pb-4">
+                <span className="h-3 w-3 rounded-full bg-red-400/80" />
+                <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
+                <span className="h-3 w-3 rounded-full bg-green-400/80" />
+              </div>
 
-          <div className="glow card rounded-2xl p-5 font-mono text-sm">
+              <div className="relative flex-1 overflow-hidden rounded-xl border border-[#202833]">
+                <img
+                  src="/images/gemini-svg.svg"
+                  alt="Pedro Vieira"
+                  className="h-full w-full object-cover object-center"
+                />
 
-            <div className="mb-5 flex gap-2 border-b border-[#202833] pb-4">
+                <div className="absolute left-3 top-3 flex gap-2">
+                  <span className="rounded-full border border-emerald-400/30 bg-[#0b1220]/80 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-emerald-300">
+                    AWS
+                  </span>
+                  <span className="rounded-full border border-blue-400/30 bg-[#0b1220]/80 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-blue-300">
+                    K8s
+                  </span>
+                </div>
 
-              <span className="h-3 w-3 rounded-full bg-red-400/80" />
+                <div className="absolute right-3 top-3 rounded-full border border-slate-400/20 bg-[#0b1220]/70 px-2 py-1 text-[8px] uppercase tracking-[0.18em] text-slate-300">
+                  IaC
+                </div>
 
-              <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
-              <span className="h-3 w-3 rounded-full bg-green-400/80" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="mb-2 flex items-center gap-2 text-xs text-green-400">
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+                    SYSTEM ONLINE
+                  </div>
 
+                  <p className="text-sm text-gray-300">Pedro Vieira</p>
+                  <p className="text-xs text-gray-500">
+                    DevOps Engineer · Cloud · Automation
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 space-y-1 text-xs text-gray-500">
+                <p>
+                  <span className="text-green-400">$</span> whoami
+                </p>
+
+                <p className="pl-4 text-gray-300">devops.engineer</p>
+              </div>
             </div>
-
-            <div className="space-y-3 text-gray-400">
-
-              <p>
-                <span className="text-green-400">$</span>{" "}
-                kubectl get infrastructure
-              </p>
-
-              <p className="pl-4 text-green-400">
-                ✓ infrastructure: ready
-              </p>
-
-              <p>
-                <span className="text-green-400">$</span>{" "}
-                terraform plan
-              </p>
-
-              <p className="pl-4 text-blue-400">
-                Plan: infrastructure as code
-              </p>
-
-              <p>
-                <span className="text-green-400">$</span>{" "}
-                ./deploy.sh
-              </p>
-
-              <p className="pl-4 text-green-400">
-                ✓ deployment completed
-              </p>
-
-              <p>
-                <span className="text-green-400">$</span>{" "}
-                systemctl status observability
-              </p>
-
-              <p className="pl-4 text-green-400">
-                ● monitoring.service — active
-              </p>
-
-            </div>
-
           </div>
-
         </div>
-
       </section>
 
       {/* ABOUT */}
@@ -430,10 +421,10 @@ export default function Home() {
               </p>
 
               <a
-                href="mailto:seu-email@email.com"
+                href="mailto:pedro.vieira.0180@gmail.com"
                 className="mt-5 inline-block font-mono text-sm text-blue-400 hover:text-blue-300"
               >
-                seu-email@email.com
+                pedro.vieira.0180@gmail.com
               </a>
 
             </div>
